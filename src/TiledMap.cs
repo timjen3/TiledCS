@@ -98,6 +98,11 @@ namespace TiledCS
         public string BackgroundColor { get; set; }
 
         /// <summary>
+        /// The map class
+        /// </summary>
+        public string Class { get; set; }
+
+        /// <summary>
         /// Returns an empty instance of TiledMap
         /// </summary>
         public TiledMap()
@@ -169,6 +174,7 @@ namespace TiledCS
                 RenderOrder = nodeMap.Attributes["renderorder"].Value;
                 BackgroundColor = nodeMap.Attributes["backgroundcolor"]?.Value;
                 Infinite = nodeMap.Attributes["infinite"].Value == "1";
+                Class = nodeMap.Attributes["class"]?.Value;
 
                 Width = int.Parse(nodeMap.Attributes["width"].Value);
                 Height = int.Parse(nodeMap.Attributes["height"].Value);
